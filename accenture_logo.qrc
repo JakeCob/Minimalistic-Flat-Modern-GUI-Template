@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="accenture_logo">
+    <file>Accenture.png</file>
+  </qresource>
+</RCC>

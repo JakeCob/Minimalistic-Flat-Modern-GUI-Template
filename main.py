@@ -164,7 +164,7 @@ class MainWindow(QMainWindow):
 
 
         #----> SET WINDOW TITLE AND ICON
-        applicationName = "App Name"
+        applicationName = "TRANSPO REWARD"
         self.setWindowTitle(applicationName) #SETS THE APPLICATION NAME IN THE WINDOW TOPBAR                        ---------(C4)
         #EVENTHOW IT IS AVSENT THIS IS NECESSERY AS THE OPERATING SYSTEM RECOGNISES THE SOFTWARE SUING THIS NAME
         #SO YOU WILL SEE THE NAME ENTERED HERE IN THE TASKBAR, TITLEBAR, E.T.C
