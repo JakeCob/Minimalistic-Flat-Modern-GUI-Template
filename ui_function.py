@@ -1,38 +1,10 @@
-###########################################################################################
-###                        CODE:       WRITTEN BY: ANJAL.P AUGUST 11 2020               ###
-###                        PROJECT:    PELLIS Z1                                        ###
-###                        PURPOSE:    WINDOWS/LINUX/MAC OS FLAT MODERN UI              ###
-###                                    BASED ON QT DESIGNER, PySide2                    ###
-###                        USE CASE:   TEMPLATE FOR SOFTWARES                           ###
-###                        LICENCE:    MIT OPENSOURCE LICENCE                           ###
-###                                                                                     ###
-###                            CODE IS FREE TO USE AND MODIFY                           ###
-###########################################################################################
+import pandas as pd
 
-###########################################################################################
-#                                     DOCUMENTATION                                       #
-#                                                                                         #
-#                                                                                         #
-#  Each line of the code described below is commented well, such as: the purpose of the   #
-#  code, its function, returns e.t.c as in certain caes: the alternatives to that solul-  #
-#  ution, other sources like included PDF document has also the working of the code.      #
-#  CSS stylesheet of the buttons are given seperatly in the CSS.txt in the parent folder  #
-###########################################################################################
-
-###########################################################################################
-#                                       CAUTION                                           #
-#  SINCE MOST OF THE WORK IS DONE IN THE QT DESIGNER, YOU WAY NOT SEE THE STYLESHEET HERE #
-#  FOR THAT PLEASE REFER THE CSS.txt FILE PROVIDED IN THIS SAME FILE.                     #
-#  ALSO AMNY OF THE SETTINGS IS PREDEFINED IN THE QT DESIGNER ITSELF, SO HERE IN THIS FUN-#
-#  CTION WHAY HAPPENS AFTER THIS I.E. WHEN THE USER CHANGES THE INPUT STATE, ONLY IS DELT #
-#  HERE, SO IF YOU WANT TO MODIFY THE FILE, PLEASE OPEN THE CORRESPONDING .ui FILE IN QT  #
-#  DESIGNER AND MADE THE MODIFICATION AND THENY COME BACK HERE TO ADD FUNCTIONALITY TO THE#
-#  CHANGES.                                                                               #
-########################################################################################### 
-
-
+from module.count_date import count_date
+from module.transpo_reward import compute_reward
+from module.insert_inDict import insert_inDict
+from module.report import print_report
 from main import * #IMPORTING THE MAIN.PY FILE
-
 from about import *
 
 
@@ -42,7 +14,7 @@ init = False # NECRESSERY FOR INITITTION OF THE WINDOW.
 
 # tab_Buttons = ['bn_home', 'bn_bug', 'bn_android', 'bn_cloud'] #BUTTONS IN MAIN TAB  
 # android_buttons = ['bn_android_contact', 'bn_android_game', 'bn_android_clean', 'bn_android_world'] #BUTTONS IN ANDROID STACKPAGE
-
+file_path = ""
 # THIS CLASS HOUSES ALL FUNCTION NECESSERY FOR OUR PROGRAMME TO RUN.
 class UIFunction(MainWindow):
 
@@ -229,6 +201,7 @@ class UIFunction(MainWindow):
     #----> STACKWIDGET EACH PAGE FUNCTION PAGE FUNCTIONS
     # CODE TO PERFOMR THE TASK IN THE STACKED WIDGET PAGE 
     # WHAT EVER WIDGET IS IN THE STACKED PAGES ITS ACTION IS EVALUATED HERE AND THEN THE REST FUNCTION IS PASSED.
+
     def stackPage(self):
 
         ######### PAGE_HOME ############# BELOW DISPLAYS THE FUNCTION OF WIDGET, LABEL, PROGRESS BAR, E.T.C IN STACKEDWIDGET page_HOME
@@ -241,9 +214,9 @@ class UIFunction(MainWindow):
         # THIS CALLS A SIMPLE FUNCTION LOOPS THROW THE NUMBER FORWARDED BY THE COMBOBOX 'comboBox_bug' AND DISPLAY IN PROGRESS BAR
         #ALONGWITH MOVING THE PROGRESS CHUNK FROM 0 TO 100%
 
-        #########PAGE CLOUD #############
-        file_path = self.ui.bn_browse.clicked.connect(lambda: APFunction.browseFiles(self))
-        self.ui.bn_compute.clicked.connect(lambda: APFunction.computeReward(self, file_path))
+        #########PAGE CLOUD ############
+        self.ui.bn_browse.clicked.connect(lambda: APFunction.browseFiles(self))
+        self.ui.bn_compute.clicked.connect(lambda: APFunction.computeReward(self))
         #self.ui.bn_cloud_clear.clicked.connect(lambda: self.dialogexec("Warning", "Do you want to save the file", "icons/1x/errorAsset 55.png", "Cancel", "Save"))
         
 
@@ -305,8 +278,10 @@ class UIFunction(MainWindow):
 # THIS CLASS IS WHERE THE APPLICATION OF THE UI OR THE BRAINOF THE SOFTWARE GOES
 # UNTILL NOW WE SEPCIFIED THE BUTTON CLICKS, SLIDERS, E.T.C WIDGET, WHOSE APPLICATION IS EXPLORED HERE. THOSE FUNCTION WHEN DONE IS 
 # REDIRECTED TO THIS AREA FOR THE PROCESSING AND THEN THE RESULT ARE EXPOTED.
-#REMEMBER THE SOFTWARE UI HAS A FUNCTION WHOSE CODE SHOULD BE HERE    
+#REMEMBER THE SOFTWARE UI HAS A FUNCTION WHOSE CODE SHOULD BE HERE
 class APFunction():
+      
+
     #-----> ADDING NUMBER TO ILLUSTRATE THE CAPABILITY OF THE PROGRESS BAR WHEN THE 'START' BUTTON IS PRESSED
     def addNumbers(self, number, enable):
         if enable:
@@ -319,15 +294,64 @@ class APFunction():
             self.ui.progressBar_bug.setValue(100)
     ###########################
 
+    file_path = ""
     #---> FUNCTION TO CONNECT THE CLOUD USING ADRESS AND RETURN A ERROR STATEMENT
     def browseFiles(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file', 'c:\\', "CSV files (*.csv)")
-        self.ui.line_fp.setText(fname[0])
-        return fname[0]
+        global file_path 
+        file_path = fname[0]
+        print(file_path)
+        self.ui.line_fp.setText(file_path)
     
-    def computeReward(self, filepath):
-        text_bpm = self.ui.line_bpm.text()
-        print(text_bpm)  
+    def computeReward(self):
+        global file_path
+        fnl_award = []
+        fnl_rpp = [] # Final Reward Points
+        fnl_rpe = [] # Final Reward Equivalent in PHP
+        bpm = int(self.ui.line_bpm.text())
+        tot_rpe = 0 # Total Reward Equivalent in PHP
+
+        # Reading the input file
+        dict_data = pd.read_csv(file_path)
+
+        # Getting the EID and Date and putting it into a list
+        fnl_el, fnl_dl, fnl_count, fnl_af, fnl_ex, fnl_st, fnl_com = count_date(dict_data)
+
+        # Creating a new dataframe
+        dict_final = insert_inDict(fnl_el, fnl_count, fnl_af, fnl_ex, fnl_st, fnl_com)
+
+        for count in fnl_count:
+            award, rp_points, rp_php = compute_reward(count)
+            fnl_award.append(award)
+            fnl_rpp.append(rp_points)
+            fnl_rpe.append(rp_php)
+
+        dict_final['Award'] = fnl_award
+        dict_final['Reward Points'] = fnl_rpp
+        dict_final['Reward Equivalent in PHP'] = fnl_rpe
+
+        # Writing the output file
+        try:
+            dict_final.to_csv("src/output/RTO incentives_v01.csv", index=False)
+            # dict_final.to_excel("src/output/RTO incentives_v01.xlsx", index=False)
+            print("The output file has been successfully created.")
+        except PermissionError:
+            print("Please close the output file before running the program again.")
+
+        # Calculating the remaining budget per month
+        for rpe in fnl_rpe:
+            tot_rpe += rpe
+
+        rbp = bpm - tot_rpe # Remaining budget per month
+
+        bpm = "₱{:,.2f}".format(bpm)
+        tot_rpe = "₱{:,.2f}".format(tot_rpe)
+        rbp = "₱{:,.2f}".format(rbp)
+
+        # Printing the report
+        print("\n\n---------------------------------------------------")
+        print_report(bpm, tot_rpe, rbp)
+        print("---------------------------------------------------\n\n")  
 
     #-----> FUNCTION IN ACCOUNT OF CONTACT PAGE IN ANDROID MENU
     def editable(self):
