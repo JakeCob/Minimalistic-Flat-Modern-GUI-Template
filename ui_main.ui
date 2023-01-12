@@ -944,7 +944,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_bug">
+              <widget class="QPushButton" name="bn_cloud">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -958,7 +958,7 @@ QPushButton:pressed {
                 </size>
                </property>
                <property name="toolTip">
-                <string>Bug</string>
+                <string>Cloud</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
@@ -977,12 +977,12 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/bugAsset 47.png</normaloff>icons/1x/bugAsset 47.png</iconset>
+                 <normaloff>icons/1x/cloudAsset 48.png</normaloff>icons/1x/cloudAsset 48.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>22</width>
-                 <height>22</height>
+                 <height>12</height>
                 </size>
                </property>
                <property name="flat">
@@ -1030,7 +1030,7 @@ QPushButton:pressed {
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="bn_cloud">
+              <widget class="QPushButton" name="bn_bug">
                <property name="minimumSize">
                 <size>
                  <width>80</width>
@@ -1044,7 +1044,7 @@ QPushButton:pressed {
                 </size>
                </property>
                <property name="toolTip">
-                <string>Cloud</string>
+                <string>Bug</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
@@ -1063,12 +1063,12 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/cloudAsset 48.png</normaloff>icons/1x/cloudAsset 48.png</iconset>
+                 <normaloff>icons/1x/bugAsset 47.png</normaloff>icons/1x/bugAsset 47.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>22</width>
-                 <height>12</height>
+                 <height>22</height>
                 </size>
                </property>
                <property name="flat">
@@ -1255,7 +1255,7 @@ QPushButton:pressed {
                 <string notr="true">background-color: rgb(125, 100, 106);</string>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>6</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
@@ -2127,7 +2127,7 @@ QProgressBar::chunk{
 }</string>
                    </property>
                    <property name="text">
-                    <string>Cloud Connect</string>
+                    <string>Compute the Reward</string>
                    </property>
                   </widget>
                  </item>
@@ -2139,7 +2139,7 @@ QProgressBar::chunk{
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>235</height>
+                     <height>300</height>
                     </size>
                    </property>
                    <property name="maximumSize">
@@ -2179,7 +2179,68 @@ QProgressBar::chunk{
                     <property name="verticalSpacing">
                      <number>0</number>
                     </property>
-                    <item row="0" column="0">
+                    <item row="6" column="2" alignment="Qt::AlignHCenter">
+                     <widget class="QPushButton" name="bn_compute">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>69</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	border: 2px solid rgb(51,51,51);
+	border-radius: 5px;	
+	color:rgb(255,255,255);
+	background-color: rgb(51,51,51);
+	width: 1000px;
+}
+QPushButton:hover {
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(0,143,150);
+}
+QPushButton:pressed {	
+	border: 2px solid rgb(0,143,150);
+	background-color: rgb(51,51,51);
+}
+
+QPushButton:disabled {	
+	border-radius: 5px;	
+	border: 2px solid rgb(112,112,112);
+	background-color: rgb(112,112,112);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Compute</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="7" column="2">
+                     <spacer name="verticalSpacer_6">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="4" column="2" alignment="Qt::AlignHCenter">
                      <widget class="QLabel" name="label_2">
                       <property name="minimumSize">
                        <size>
@@ -2197,196 +2258,165 @@ QProgressBar::chunk{
                        <string notr="true">color:rgb(255,255,255);</string>
                       </property>
                       <property name="text">
-                       <string>Client ID :</string>
+                       <string>Enter a csv file</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="0">
-                     <widget class="QLabel" name="label_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>100</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>Server Adress :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="0">
-                     <widget class="QLabel" name="label_4">
-                      <property name="minimumSize">
-                       <size>
-                        <width>100</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
-                      </property>
-                      <property name="text">
-                       <string>Proxy :</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="2" column="1" colspan="3">
-                     <widget class="QLineEdit" name="line_cloud_proxy">
-                      <property name="minimumSize">
-                       <size>
-                        <width>400</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>500</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit {
-	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
-}
-
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
-}</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1" colspan="3">
-                     <widget class="QLineEdit" name="line_cloud_id">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>400</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>500</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit {
-	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
-}
-
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
-}</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1" colspan="3">
-                     <widget class="QLineEdit" name="line_cloud_adress">
-                      <property name="minimumSize">
-                       <size>
-                        <width>400</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>500</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QLineEdit {
-	color:rgb(255,255,255);
-	border:2px solid rgb(51,51,51);
-	border-radius:4px;
-	background:rgb(51,51,51);
-}
-
-QLineEdit:disabled {
-	color:rgb(255,255,255);
-	border:2px solid rgb(112,112,112);
-	border-radius:4px;
-	background:rgb(112,112,112);
-}</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="4">
+                    <item row="1" column="4" colspan="2">
                      <spacer name="horizontalSpacer_2">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
-                        <width>40</width>
+                        <width>100</width>
                         <height>20</height>
                        </size>
                       </property>
                      </spacer>
                     </item>
-                    <item row="3" column="0" colspan="2">
+                    <item row="6" column="0" colspan="2">
                      <spacer name="horizontalSpacer_3">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
                       </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Preferred</enum>
+                      </property>
                       <property name="sizeHint" stdset="0">
                        <size>
-                        <width>40</width>
+                        <width>50</width>
                         <height>20</height>
                        </size>
                       </property>
                      </spacer>
                     </item>
-                    <item row="3" column="2">
-                     <widget class="QPushButton" name="bn_cloud_clear">
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="label_bpm">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(255,255,255);</string>
+                      </property>
+                      <property name="text">
+                       <string>Budget Per Month:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1" colspan="3">
+                     <widget class="QLineEdit" name="line_bpm">
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>500</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	color:rgb(255,255,255);
+	border:2px solid rgb(51,51,51);
+	border-radius:4px;
+	background:rgb(51,51,51);
+}
+
+QLineEdit:disabled {
+	color:rgb(255,255,255);
+	border:2px solid rgb(112,112,112);
+	border-radius:4px;
+	background:rgb(112,112,112);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1" colspan="3">
+                     <widget class="QLineEdit" name="line_fp">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>500</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit {
+	color:rgb(255,255,255);
+	border:2px solid rgb(51,51,51);
+	border-radius:4px;
+	background:rgb(51,51,51);
+}
+
+QLineEdit:disabled {
+	color:rgb(255,255,255);
+	border:2px solid rgb(112,112,112);
+	border-radius:4px;
+	background:rgb(112,112,112);
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="label_filepath">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>14</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:rgb(255,255,255);</string>
+                      </property>
+                      <property name="text">
+                       <string>File Path:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="4">
+                     <widget class="QPushButton" name="bn_browse">
                       <property name="enabled">
                        <bool>true</bool>
                       </property>
@@ -2431,56 +2461,35 @@ QPushButton:disabled {
 }</string>
                       </property>
                       <property name="text">
-                       <string>Clear</string>
+                       <string>Browse</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="3" column="3">
-                     <widget class="QPushButton" name="bn_cloud_connect">
-                      <property name="minimumSize">
+                    <item row="0" column="2">
+                     <spacer name="verticalSpacer_7">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
                        <size>
-                        <width>69</width>
-                        <height>25</height>
+                        <width>20</width>
+                        <height>40</height>
                        </size>
                       </property>
-                      <property name="maximumSize">
+                     </spacer>
+                    </item>
+                    <item row="2" column="2">
+                     <spacer name="verticalSpacer_8">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
                        <size>
-                        <width>69</width>
-                        <height>25</height>
+                        <width>20</width>
+                        <height>40</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>12</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {
-	border: 2px solid rgb(51,51,51);
-	border-radius: 5px;	
-	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
-}
-QPushButton:hover {
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
-}
-QPushButton:pressed {	
-	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
-}
-
-QPushButton:disabled {	
-	border-radius: 5px;	
-	border: 2px solid rgb(112,112,112);
-	background-color: rgb(112,112,112);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Connect</string>
-                      </property>
-                     </widget>
+                     </spacer>
                     </item>
                    </layout>
                   </widget>
@@ -2489,6 +2498,9 @@ QPushButton:disabled {
                   <spacer name="verticalSpacer_2">
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Maximum</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>

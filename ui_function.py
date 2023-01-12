@@ -242,9 +242,10 @@ class UIFunction(MainWindow):
         #ALONGWITH MOVING THE PROGRESS CHUNK FROM 0 TO 100%
 
         #########PAGE CLOUD #############
-        self.ui.bn_cloud_connect.clicked.connect(lambda: APFunction.cloudConnect(self))
+        file_path = self.ui.bn_browse.clicked.connect(lambda: APFunction.browseFiles(self))
+        self.ui.bn_compute.clicked.connect(lambda: APFunction.computeReward(self, file_path))
         #self.ui.bn_cloud_clear.clicked.connect(lambda: self.dialogexec("Warning", "Do you want to save the file", "icons/1x/errorAsset 55.png", "Cancel", "Save"))
-        self.ui.bn_cloud_clear.clicked.connect(lambda: APFunction.cloudClear(self))
+        
 
         #########PAGE ANDROID WIDGET AND ITS STACKANDROID WIDGET PAGES
         self.ui.bn_android_contact.clicked.connect(lambda: UIFunction.androidStackPages(self, "page_contact"))
@@ -319,21 +320,14 @@ class APFunction():
     ###########################
 
     #---> FUNCTION TO CONNECT THE CLOUD USING ADRESS AND RETURN A ERROR STATEMENT
-    def cloudConnect(self):
-        self.ui.bn_cloud_clear.setEnabled(False)
-        textID = self.ui.line_cloud_id.text()
-        textADRESS = self.ui.line_cloud_adress.text()
-        if textID=='asd' and textADRESS=='1234':
-            self.ui.line_cloud_adress.setText("")
-            self.ui.line_cloud_id.setText("")
-            self.ui.line_cloud_proxy.setText("Connection established")
-        else:
-            self.errorexec("Incorrect Credentials", "icons/1x/errorAsset 55.png", "Retry")
-
-    def cloudClear(self):
-        self.ui.line_cloud_proxy.setText("")
-        self.ui.line_cloud_adress.setText("")
-        self.ui.line_cloud_id.setText("")
+    def browseFiles(self):
+        fname = QFileDialog.getOpenFileName(self, 'Open file', 'c:\\', "CSV files (*.csv)")
+        self.ui.line_fp.setText(fname[0])
+        return fname[0]
+    
+    def computeReward(self, filepath):
+        text_bpm = self.ui.line_bpm.text()
+        print(text_bpm)  
 
     #-----> FUNCTION IN ACCOUNT OF CONTACT PAGE IN ANDROID MENU
     def editable(self):
