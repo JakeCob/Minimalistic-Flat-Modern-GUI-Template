@@ -172,8 +172,6 @@ class MainWindow(QMainWindow):
         #IT TAKES SELF AND THE BUTTON NAME AS THE RGUMENT, THIS IS ONLY TO RECOGNISE WHICH BUTTON IS PRESSED BY THE buttonPressed() FUNCTION.
         self.ui.bn_home.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_home'))
         self.ui.bn_bug.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_bug'))
-        self.ui.bn_android.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_android'))
-        self.ui.bn_cloud.clicked.connect(lambda: UIFunction.buttonPressed(self, 'bn_cloud'))
         #############################################################
 
 
@@ -202,7 +200,7 @@ class MainWindow(QMainWindow):
 #REFER THE DOCUMENTATION: Documentation.pdf FILE
 
 #--CALLING A DIALOG BOX----------------------:
-        #dialogexec("Heading", "Message", "icon", "Button1name", "button2name")
+        # dialogexec("Heading", "Message", "icon", "Button1name", "button2name")
 
 #--CALLING A ERROR BOX-----------------------:
         #errorexec("Message", "icon", "buttonname")

@@ -7,6 +7,8 @@ from module.report import print_report
 from main import * #IMPORTING THE MAIN.PY FILE
 from about import *
 
+from PySide2.QtWidgets import QApplication, QMainWindow, QDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
+
 
 GLOBAL_STATE = 0 #NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
 GLOBAL_TITLE_BAR = True #NECESSERY FOR CHECKING WEATHER THE WINDWO IS FULL SCREEN OR NOT
@@ -25,7 +27,7 @@ class UIFunction(MainWindow):
         if init==False:
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
             self.ui.lab_tab.setText("Home")
-            self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+            self.ui.frame_home.setStyleSheet("background:rgb(202, 20, 229)")
             init = True
     ################################################################################################
 
@@ -78,7 +80,7 @@ class UIFunction(MainWindow):
 
         #------> THIS LINE CLEARS THE BG OF PREVIOUS TABS : I.E. MAKING THEN NORMAL COLOR THAN LIGHTER COLOR.
         for each in self.ui.frame_bottom_west.findChildren(QFrame): 
-            each.setStyleSheet("background:rgb(51,51,51)")
+            each.setStyleSheet("background:rgb(70, 0, 115)")
 
         if clicked:
             currentWidth = self.ui.frame_bottom_west.width() #Reads the current width of the frame
@@ -88,13 +90,13 @@ class UIFunction(MainWindow):
                 #----> MAKE THE STACKED WIDGET PAGE TO ABOUT HOME PAGE
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_home)
                 self.ui.lab_tab.setText("About > Home")
-                self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+                self.ui.frame_home.setStyleSheet("background:rgb(202, 20, 229)")
             else:
                 extend = minWidth
                 #-----> REVERT THE ABOUT HOME PAGE TO NORMAL HOME PAGE
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
                 self.ui.lab_tab.setText("Home")
-                self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)")
+                self.ui.frame_home.setStyleSheet("background:rgb(202, 20, 229)")
             #THIS ANIMATION IS RESPONSIBLE FOR THE TOODLE TO MOVE IN A SOME FIXED STATE.
             self.animation = QPropertyAnimation(self.ui.frame_bottom_west, b"minimumWidth")
             self.animation.setDuration(300)
@@ -147,53 +149,29 @@ class UIFunction(MainWindow):
 
         #------> THIS LINE CLEARS THE BG OF PREVIOUS TABS I.E. FROM THE LITER COLOR TO THE SAME BG COLOR I.E. TO CHANGE THE HIGHLIGHT.
         for each in self.ui.frame_bottom_west.findChildren(QFrame):
-            each.setStyleSheet("background:rgb(51,51,51)")
+            each.setStyleSheet("background:rgb(70, 0, 115)")
 
         if buttonName=='bn_home':
             if self.ui.frame_bottom_west.width()==80  and index!=0:
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
                 self.ui.lab_tab.setText("Home")
-                self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST 
+                self.ui.frame_home.setStyleSheet("background:rgb(202, 20, 229)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST 
 
             elif self.ui.frame_bottom_west.width()==160  and index!=1:  # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_home)
                 self.ui.lab_tab.setText("About > Home")
-                self.ui.frame_home.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
+                self.ui.frame_home.setStyleSheet("background:rgb(202, 20, 229)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
         elif buttonName=='bn_bug':
             if self.ui.frame_bottom_west.width()==80 and index!=5:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_bug)
-                self.ui.lab_tab.setText("Bug")
-                self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
+                self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
+                self.ui.lab_tab.setText("Compute Transpo Reward")
+                self.ui.frame_bug.setStyleSheet("background:rgb(202, 20, 229)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
 
             elif self.ui.frame_bottom_west.width()==160 and index!=4:   # ABOUT PAGE STACKED WIDGET
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_bug)
-                self.ui.lab_tab.setText("About > Bug")
-                self.ui.frame_bug.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-
-        elif buttonName=='bn_android':
-            if self.ui.frame_bottom_west.width()==80  and index!=7:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_android)
-                self.ui.lab_tab.setText("Android")
-                self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-                UIFunction.androidStackPages(self, "page_contact")
-
-            elif self.ui.frame_bottom_west.width()==160  and index!=3:   # ABOUT PAGE STACKED WIDGET
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_android)
-                self.ui.lab_tab.setText("About > Android")
-                self.ui.frame_android.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-
-        elif buttonName=='bn_cloud':
-            if self.ui.frame_bottom_west.width()==80 and index!=6:
-                self.ui.stackedWidget.setCurrentWidget(self.ui.page_cloud)
-                self.ui.lab_tab.setText("Cloud")
-                self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-
-            elif self.ui.frame_bottom_west.width()==160 and index!=2:   # ABOUT PAGE STACKED WIDGET
                 self.ui.stackedWidget.setCurrentWidget(self.ui.page_about_cloud)
-                self.ui.lab_tab.setText("About > Cloud")
-                self.ui.frame_cloud.setStyleSheet("background:rgb(91,90,90)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
-
+                self.ui.lab_tab.setText("About > Compute Transpo Reward")
+                self.ui.frame_bug.setStyleSheet("background:rgb(202, 20, 229)") # SETS THE BACKGROUND OF THE CLICKED BUTTON TO LITER COLOR THAN THE REST
         #ADD ANOTHER ELIF STATEMENT HERE FOR EXECTUITING A NEW MENU BUTTON STACK PAGE.
     ########################################################################################################################
 
@@ -302,7 +280,8 @@ class APFunction():
         file_path = fname[0]
         print(file_path)
         self.ui.line_fp.setText(file_path)
-    
+        
+
     def computeReward(self):
         global file_path
         fnl_award = []
@@ -351,7 +330,24 @@ class APFunction():
         # Printing the report
         print("\n\n---------------------------------------------------")
         print_report(bpm, tot_rpe, rbp)
-        print("---------------------------------------------------\n\n")  
+        print("---------------------------------------------------\n\n")
+
+        # Displaying the report
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Budget Information")
+
+        budget_label = QLabel("Budget per month: " + str(bpm))
+        total_label = QLabel("Total Reward Equivalent in PHP: " + str(tot_rpe))
+        remaining_label = QLabel("Remaining Budget per month: " + str(rbp))
+
+        vbox = QVBoxLayout()
+        vbox.addWidget(budget_label)
+        vbox.addWidget(total_label)
+        vbox.addWidget(remaining_label)
+
+        dialog.setLayout(vbox)
+        dialog.exec_()
+         
 
     #-----> FUNCTION IN ACCOUNT OF CONTACT PAGE IN ANDROID MENU
     def editable(self):

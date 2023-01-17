@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="reward_icon">
+    <file>reward.png</file>
+  </qresource>
+</RCC>

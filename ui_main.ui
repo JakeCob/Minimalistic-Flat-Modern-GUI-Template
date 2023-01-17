@@ -776,7 +776,7 @@ QPushButton:pressed {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>160</width>
+                 <width>80</width>
                  <height>55</height>
                 </size>
                </property>
@@ -895,8 +895,8 @@ QPushButton:pressed {
                </property>
                <property name="iconSize">
                 <size>
-                 <width>22</width>
-                 <height>22</height>
+                 <width>50</width>
+                 <height>50</height>
                 </size>
                </property>
                <property name="flat">
@@ -928,92 +928,6 @@ QPushButton:pressed {
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_16">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="bn_cloud">
-               <property name="minimumSize">
-                <size>
-                 <width>80</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>160</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Cloud</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	border: none;
-	background-color: rgba(0,0,0,0);
-}
-QPushButton:hover {
-	background-color: rgb(202, 20, 229);
-}
-QPushButton:pressed {	
-	background-color: rgba(0,0,0,0);
-}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>icons/1x/cloudAsset 48.png</normaloff>icons/1x/cloudAsset 48.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>22</width>
-                 <height>12</height>
-                </size>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_cloud">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>160</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_17">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -1063,98 +977,12 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/1x/bugAsset 47.png</normaloff>icons/1x/bugAsset 47.png</iconset>
+                 <normaloff>icons/1x/reward.png</normaloff>icons/1x/reward.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>22</width>
-                 <height>22</height>
-                </size>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_android">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>160</width>
-              <height>55</height>
-             </size>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="bn_android">
-               <property name="minimumSize">
-                <size>
-                 <width>80</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>160</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Android</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton {
-	border: none;
-	background-color: rgba(0,0,0,0);
-}
-QPushButton:hover {
-	background-color: rgb(202, 20, 229);
-}
-QPushButton:pressed {	
-	background-color: rgba(0,0,0,0);
-}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>icons/1x/androidAsset 49.png</normaloff>icons/1x/androidAsset 49.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>22</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="flat">
@@ -1252,10 +1080,10 @@ QPushButton:pressed {
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(125, 100, 106);</string>
+                <string notr="true">border-color: rgb(202, 20, 229);</string>
                </property>
                <property name="currentIndex">
-                <number>6</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="styleSheet">
@@ -2083,7 +1911,7 @@ QProgressBar::chunk{
                </widget>
                <widget class="QWidget" name="page_cloud">
                 <property name="styleSheet">
-                 <string notr="true">background:rgb(91,90,90);</string>
+                 <string notr="true">background-color: rgb(235, 241, 239);</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_8">
                  <property name="spacing">
@@ -2123,7 +1951,9 @@ QProgressBar::chunk{
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QLabel {
-	color:rgb(255,255,255);
+	color:black;
+	
+	background-color: rgb(235, 241, 239);
 }</string>
                    </property>
                    <property name="text">
@@ -2153,6 +1983,9 @@ QProgressBar::chunk{
                      <family>Segoe UI</family>
                      <pointsize>12</pointsize>
                     </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(235, 241, 239);</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -2204,16 +2037,16 @@ QProgressBar::chunk{
 	border: 2px solid rgb(51,51,51);
 	border-radius: 5px;	
 	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
+	background-color: rgb(70, 0, 115);
 	width: 1000px;
 }
 QPushButton:hover {
 	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
+	background-color: rgb(39, 0, 58);
 }
 QPushButton:pressed {	
 	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
+	background-color: rgb(39, 0, 58);
 }
 
 QPushButton:disabled {	
@@ -2255,7 +2088,7 @@ QPushButton:disabled {
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
+                       <string notr="true">color:black;</string>
                       </property>
                       <property name="text">
                        <string>Enter a csv file</string>
@@ -2301,12 +2134,14 @@ QPushButton:disabled {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
+                        <family>Verdana</family>
                         <pointsize>14</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
+                       <string notr="true">color:black;</string>
                       </property>
                       <property name="text">
                        <string>Budget Per Month:</string>
@@ -2338,7 +2173,7 @@ QPushButton:disabled {
 	color:rgb(255,255,255);
 	border:2px solid rgb(51,51,51);
 	border-radius:4px;
-	background:rgb(51,51,51);
+	background:white;
 }
 
 QLineEdit:disabled {
@@ -2388,7 +2223,7 @@ QLineEdit:disabled {
 	color:rgb(255,255,255);
 	border:2px solid rgb(112,112,112);
 	border-radius:4px;
-	background:rgb(112,112,112);
+	background:rgb(235, 241, 239);
 }</string>
                       </property>
                      </widget>
@@ -2403,12 +2238,14 @@ QLineEdit:disabled {
                       </property>
                       <property name="font">
                        <font>
-                        <family>Segoe UI</family>
+                        <family>Verdana</family>
                         <pointsize>14</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color:rgb(255,255,255);</string>
+                       <string notr="true">color:black;</string>
                       </property>
                       <property name="text">
                        <string>File Path:</string>
@@ -2443,15 +2280,15 @@ QLineEdit:disabled {
 	border: 2px solid rgb(51,51,51);
 	border-radius: 5px;	
 	color:rgb(255,255,255);
-	background-color: rgb(51,51,51);
+	background-color: rgb(70, 0, 115);
 }
 QPushButton:hover {
 	border: 2px solid rgb(0,143,150);
-	background-color: rgb(0,143,150);
+	background-color: rgb(39, 0, 58);
 }
 QPushButton:pressed {	
 	border: 2px solid rgb(0,143,150);
-	background-color: rgb(51,51,51);
+	background-color: rgb(39, 0, 58);
 }
 
 QPushButton:disabled {	
@@ -3991,6 +3828,7 @@ QScrollBar::sub-page:vertical {
  </widget>
  <resources>
   <include location="icons/1x/accenture_logo.qrc"/>
+  <include location="icons/1x/reward_icon.qrc"/>
  </resources>
  <connections/>
 </ui>
